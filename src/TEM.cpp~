@@ -45,7 +45,6 @@ int main(int argc, char* argv[]){
 		return 0;
 	}
 	
-	srand(time(NULL)); //seed for random number generator
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
 

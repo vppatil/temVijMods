@@ -63,7 +63,9 @@ class RunCohort {
 	   	int yrend;
 
 		//stuff added for succession		
-
+		double transition[NMCMT] = {.7,.8};// all this will need to be changed depending on how many communities you have or want to shift between
+		int fromType[NMCMT] = {0,1};//here you change which numbers you are selecting between.
+		int toType[NMCMT] = {1,0};
 		double r;
 
 		void comChange(int cmtNum);		

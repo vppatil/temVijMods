@@ -2,7 +2,6 @@
 	#define COHORTCONST_H_
 	const int NUM_CMT = 8; //max. no. of community types
 	const int NUM_PFT = 10; //max. no. of plant function types
-	const int NMCMT = 2; //num community types in runcohort
 
 	const int NUM_PFT_PART = 3; //max. no. of plant parts (e.g., leaves, stems, roots)
 	enum VPARTKEY{I_leaf = 0, I_stem, I_root};
