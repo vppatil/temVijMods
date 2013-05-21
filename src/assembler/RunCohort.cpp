@@ -255,10 +255,10 @@ void RunCohort::run_cohortly(){
 			//
 			cht.timer->reset();
 			md->envmodule = true;
-		    md->bgcmodule = true;
-		    md->dsbmodule = true;
-		    md->dslmodule = true;
-		    md->dvmmodule = true;
+		    	md->bgcmodule = true;
+		    	md->dsbmodule = true;
+		   	md->dslmodule = true;
+		    	md->dvmmodule = true;
 
 			md->friderived = true;
 			cht.timer->stageyrind = 0;
@@ -336,15 +336,15 @@ void RunCohort::runEnvmodule(){
 	//run model with "ENV module" only
 
 	 md->envmodule = true;
-     md->bgcmodule = false;
-     md->dsbmodule = false;
-     md->dslmodule = false;
-     md->dvmmodule = false;
+     	 md->bgcmodule = false;
+     	 md->dsbmodule = false;
+     	 md->dslmodule = false;
+     	 md->dvmmodule = false;
 
-     cht.cd.yrsdist = 1000;
+     	 cht.cd.yrsdist = 1000;
 
-     yrstart = 0;
-     yrend   = 100;
+     	 yrstart = 0;
+     	 yrend   = 100;
 
      run_timeseries();
 
