@@ -42,7 +42,6 @@ class Soil_Env{
 
 		void updateDailyGroundT(const double & tdrv, const double & dayl);
       	void updateDailySM();
-	void updateDailySM(int cmt);
 
       	void getSoilTransFactor(double btran[MAX_SOI_LAY], Layer* fstsoill, const double vrootfr[MAX_SOI_LAY]);
 

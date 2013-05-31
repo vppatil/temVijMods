@@ -1,0 +1,43 @@
+netcdf fire {
+dimensions:
+	FIRESET = 30 ;
+	FIREID = UNLIMITED ; // (1 currently)
+variables:
+	int FIREID(FIREID) ;
+		FIREID:long_name = "FIREID" ;
+	int YEAR(FIREID, FIRESET) ;
+		YEAR:missing_value = -9999 ;
+		YEAR:long_name = "Fire Year" ;
+	int SEASON(FIREID, FIRESET) ;
+		SEASON:missing_value = -9999 ;
+		SEASON:long_name = "Fire Season" ;
+	int SIZE(FIREID, FIRESET) ;
+		SIZE:missing_value = -9999 ;
+		SIZE:long_name = "Fire Size" ;
+	int SEVERITY(FIREID, FIRESET) ;
+		SEVERITY:missing_value = -9999 ;
+		SEVERITY:long_name = "Burn Severity" ;
+data:
+
+ FIREID = 1 ;
+
+ YEAR =
+  10, 1000, 1900, 1950, 2010, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999 ;
+
+ SEASON =
+  2, 2, 2, 2, 2, 2, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999 ;
+
+ SIZE =
+  2, 2, 2, 2, 2, 2, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999 ;
+
+ SEVERITY =
+  2, 2, 2, 2, 2, 2, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999 ;
+}

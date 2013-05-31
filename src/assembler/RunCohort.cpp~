@@ -336,15 +336,15 @@ void RunCohort::runEnvmodule(){
 	//run model with "ENV module" only
 
 	 md->envmodule = true;
-     md->bgcmodule = false;
-     md->dsbmodule = false;
-     md->dslmodule = false;
-     md->dvmmodule = false;
+     	 md->bgcmodule = false;
+     	 md->dsbmodule = false;
+     	 md->dslmodule = false;
+     	 md->dvmmodule = false;
 
-     cht.cd.yrsdist = 1000;
+     	 cht.cd.yrsdist = 1000;
 
-     yrstart = 0;
-     yrend   = 100;
+     	 yrstart = 0;
+     	 yrend   = 100;
 
      run_timeseries();
 
@@ -379,7 +379,7 @@ void RunCohort::run_timeseries(){
 		 cht.cd.year = cht.timer->getCalendarYear();
 		
 		//put in cohort changer here.
-		comChange(cht.cd.cmttype);
+		//comChange(cht.cd.cmttype); //turn off change for now.
 		
 		 cht.prepareDayDrivingData(yrindex, used_atmyr);
 

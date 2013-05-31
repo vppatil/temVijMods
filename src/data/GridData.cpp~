@@ -10,7 +10,7 @@ GridData::~GridData(){
 
 void GridData::clear(){
 
-  lat = MISSING_F;
+  	lat = MISSING_F;
     lon = MISSING_F;
     fill_n(alldaylengths, 365, MISSING_F);
 

@@ -530,9 +530,8 @@ void Soil_Env::updateDailySM(int cmt){
 
     double infil = rnth+melt-ed->d_soi2l.qover;
     //double proprunoff = .7;
-	//if(cmt == 1){
+	//if(cmt == 1)
 	//	infil *= proprunoff;
-	//	ed->d_soi2l.qover += infil;}
     ed->d_soi2l.qinfl = infil;
 
     // 2) Then soil water dynamics at daily time step

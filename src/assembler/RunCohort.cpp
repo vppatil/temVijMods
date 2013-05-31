@@ -25,43 +25,7 @@ void RunCohort::setModelData(ModelData * mdp){
   	md = mdp;
 }
 
-//read-in one-timestep data for a cohort
-int RunCohort::readData(int cmt){
 
-	//reading the climate data
-	cht.cd.act_atm_drv_yr = md->act_clmyr;
-	cinputer.getClimate(cht.cd.tair, cht.cd.prec, cht.cd.nirr, cht.cd.vapo, cht.cd.act_atm_drv_yr, clmrecno);
-
-	//reading the vegetation community type data from 'vegetation.nc'
-	cht.cd.act_vegset = md->act_vegset;
-	cinputer.getVegetation(cht.cd.vegyear, cht.cd.vegtype, cht.cd.vegfrac, vegrecno);
-
-	//INDEX of veg. community codes, must be one of in those parameter files under 'config/'
-	cht.cd.cmttype = cmt;
-
-	// read-in parameters AND initial conditions for the above 'cmttype'
-	 string configdir = "config/";
-	 cht.chtlu.dir = configdir;
-	 stringstream ss;
-	 ss<<cht.cd.cmttype;
-	 if (cht.cd.cmttype<10){
-		 cht.chtlu.cmtcode = "CMT0"+ss.str();
-	 } else {
-		 cht.chtlu.cmtcode = "CMT"+ss.str();
-	 }
-	 cht.chtlu.init();   //put the parameter files in 'config/' with same directory of model
-
-	//reading the fire occurence data from '.nc', if not FRI derived
-  	if (!md->friderived && !md->runeq){
-  		cht.cd.act_fireset = md->act_fireset;
-  		cinputer.getFire(cht.cd.fireyear, cht.cd.fireseason, cht.cd.firesize, firerecno);
-  		if (md->useseverity) {
-  			cinputer.getFireSeverity(cht.cd.fireseverity, firerecno);
-  		}
-  	}
-
-    return 0;
-};
 
 //reading cohort-level all data ids
 int RunCohort::allchtids(){
@@ -147,6 +111,43 @@ void RunCohort::init(){
 	 resouter.setRestartOutData(&resod);
 }
 
+//read-in one-timestep data for a cohort
+int RunCohort::readData(int cmt){
+
+	//reading the climate data
+	cht.cd.act_atm_drv_yr = md->act_clmyr;
+	cinputer.getClimate(cht.cd.tair, cht.cd.prec, cht.cd.nirr, cht.cd.vapo, cht.cd.act_atm_drv_yr, clmrecno);
+
+	//reading the vegetation community type data from 'vegetation.nc'
+	cht.cd.act_vegset = md->act_vegset;
+	cinputer.getVegetation(cht.cd.vegyear, cht.cd.vegtype, cht.cd.vegfrac, vegrecno);
+
+	//INDEX of veg. community codes, must be one of in those parameter files under 'config/'
+	cht.cd.cmttype = cmt;
+
+	// read-in parameters AND initial conditions for the above 'cmttype'
+	 string configdir = "config/";
+	 cht.chtlu.dir = configdir;
+	 stringstream ss;
+	 ss<<cht.cd.cmttype;
+	 if (cht.cd.cmttype<10){
+		 cht.chtlu.cmtcode = "CMT0"+ss.str();
+	 } else {
+		 cht.chtlu.cmtcode = "CMT"+ss.str();
+	 }
+	 cht.chtlu.init();   //put the parameter files in 'config/' with same directory of model
+
+	//reading the fire occurence data from '.nc', if not FRI derived
+  	if (!md->friderived && !md->runeq){
+  		cht.cd.act_fireset = md->act_fireset;
+  		cinputer.getFire(cht.cd.fireyear, cht.cd.fireseason, cht.cd.firesize, firerecno);
+  		if (md->useseverity) {
+  			cinputer.getFireSeverity(cht.cd.fireseverity, firerecno);
+  		}
+  	}
+
+    return 0;
+};
 
 //read-in one-timestep data for a cohort
 int RunCohort::readData(){
@@ -379,7 +380,7 @@ void RunCohort::run_timeseries(){
 		 cht.cd.year = cht.timer->getCalendarYear();
 		
 		//put in cohort changer here.
-		comChange(cht.cd.cmttype);
+		//comChange(cht.cd.cmttype); //turn off change for now.
 		
 		 cht.prepareDayDrivingData(yrindex, used_atmyr);
 

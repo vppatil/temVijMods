@@ -467,9 +467,6 @@ void WildFire::getBurnAbgVegetation(const int &ip) {
 	}else if (oneseverity==4) {
 			r_burn2ag_cn = firpar.fvcomb[4][ip];
 			r_dead2ag_cn = firpar.fvdead[4][ip];
-	}else if (oneseverity==5) {
-			r_burn2ag_cn = firpar.fvcomb[4][ip];
-			r_dead2ag_cn = firpar.fvdead[4][ip];
 	}
 
 	r_live_cn = 1.-r_burn2ag_cn-r_dead2ag_cn;
@@ -504,8 +501,6 @@ double WildFire::getBurnOrgSoilthick(){
     	 bthick = firpar.foslburn[3] * totorgthick;
 
     } else if (oneseverity==4) {    //high
-    	 bthick = firpar.foslburn[4] * totorgthick;
-    } else if (oneseverity==5) {    //flood
     	 bthick = firpar.foslburn[4] * totorgthick;
 
     }
