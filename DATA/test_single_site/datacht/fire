@@ -1,0 +1,37 @@
+netcdf fire {
+dimensions:
+	FIRESET = 30 ;
+	FIREID = UNLIMITED ; // (1 currently)
+variables:
+	int FIREID(FIREID) ;
+		FIREID:long_name = "FIREID" ;
+	int YEAR(FIREID, FIRESET) ;
+		YEAR:missing_value = -9999 ;
+		YEAR:long_name = "Fire Year" ;
+	int SEASON(FIREID, FIRESET) ;
+		SEASON:missing_value = -9999 ;
+		SEASON:long_name = "Fire Season" ;
+	int SIZE(FIREID, FIRESET) ;
+		SIZE:missing_value = -9999 ;
+		SIZE:long_name = "Fire Size" ;
+	int SEVERITY(FIREID, FIRESET) ;
+		SEVERITY:missing_value = -9999 ;
+		SEVERITY:long_name = "Burn Severity" ;
+data:
+
+ FIREID = 1 ;
+
+ YEAR =
+  0,69,138,207,276,345,414,483,552,621,690,759,828,897,966,1034,1103,1172,1241,1310,1379,1448,1517,1586,1655,1724,1793,1862,1931,2000;
+
+ SEASON =
+ 2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 ;
+
+ SIZE =
+  -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, 
+    -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999, -9999 ;
+
+ SEVERITY =
+  2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 ;
+}

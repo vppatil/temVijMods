@@ -16,5 +16,5 @@ DATA/test_single_site/output/restart-eq.nc            /* restart/site-specific i
 0                                                           /* single-site output at daily  (1) or not (0)
 0                                                           /* single-site output at monthly (1) or not (0)
 1                                                           /* single-site output at yearly (1) or not (0)
-1                                                           /* summarized output (single/multiple sites) (1) or not (0)
+0                                                           /* summarized output (single/multiple sites) (1) or not (0)
 0                                                           /* output soil climate dataset (1) or not (0)
