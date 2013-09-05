@@ -11,7 +11,7 @@ DATA/test_single_site/output/restart-eq.nc            /* restart/site-specific i
 0                                                           /* using dynamical climate data (1) or not (0)
 0                                                           /* using varied co2  (1) or not (0)
 1                                                           /* using dynamical LAI from veg. C in model (1), or otherwise from input (1) 
-0                                                        /* using fire severity as input (1), or otherwise derived from fire size/fire season/drainage type (0)
+1                                                           /* using fire severity as input (1), or otherwise derived from fire size/fire season/drainage type (0)
 -9999                                                       /* output starting calendar year ('-9999' for starting model running) 
 0                                                           /* single-site output at daily  (1) or not (0)
 0                                                           /* single-site output at monthly (1) or not (0)

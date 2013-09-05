@@ -261,7 +261,7 @@ void RunCohort::run_cohortly(){
 		   	md->dslmodule = true;
 		    	md->dvmmodule = true;
 
-			md->friderived = true;
+			md->friderived = false;
 			cht.timer->stageyrind = 0;
 
 			cht.cd.yrsdist = 0;
